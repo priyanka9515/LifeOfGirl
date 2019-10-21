@@ -21,17 +21,18 @@ router.get('/ask', function(req, res, next) {
 
 
 
-router.post('/signup', function(req, res) {
+router.post('/adduser', function(req, res) {
 
     // Set our internal DB variable
     var db = req.db;
-
-    // Get our form values. These rely on the "name" attributes
-    var id = req.body.id;
-    var password = req.body.password;
-
     // Set our collection
     var collection = db.get('user');
+    // Get our form values. These rely on the "name" attributes
+    var id = req.body.name;
+    var password = req.body.password;
+
+ 
+  
 
     // Submit to the DB
     collection.insert({
