@@ -1,6 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+var db = mongoose.connection;
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -37,8 +41,7 @@ router.post('/adduser', function(req, res) {
     // Submit to the DB
     collection.insert({
         "id" : id,
-        "password" : password
-    }, function (err, doc) {
+        "password" :password}, function (err, doc) {
         if (err) {
             // If it failed, return error
             res.send("There was a problem adding the information to the database.");
