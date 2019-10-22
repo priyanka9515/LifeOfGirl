@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
-var db = mongoose.connection;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,7 +27,7 @@ router.post('/adduser', function(req, res) {
     // Set our internal DB variable
     var db = req.db;
     // Set our collection
-    var collection = db.get('user');
+   var userCollection = db.collection('user');
     // Get our form values. These rely on the "name" attributes
     var id = req.body.name;
     var password = req.body.password;
@@ -39,7 +36,7 @@ router.post('/adduser', function(req, res) {
   
 
     // Submit to the DB
-    collection.insert({
+    userCollection.insert({
         "id" : id,
         "password" :password}, function (err, doc) {
         if (err) {
