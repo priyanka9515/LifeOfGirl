@@ -1,0 +1,15 @@
+
+form( id='formAddPost' method='POST' action='/addpost')
+    div.form-group
+      label(for='name') title:
+      input#id.form-control(type='text', placeholder='title' name='title')
+    div.form-group
+      label(for='name') description:
+      input#id.form-control(type='text', placeholder='description' name='desc')
+      
+
+    div.form-group
+      label(for='name') link:
+      input#id.form-control(type='text', placeholder='link' name='link')      
+      
+      button.btn.btn-primary(type='submit') Submit
