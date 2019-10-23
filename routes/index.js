@@ -79,13 +79,15 @@ router.post('/login', function(req,res){
     var id = req.body.name;
     var password = req.body.password;
     var query = {"id": id, "password": password}
-     db.collection('user').find(query, function(err, user){
-      if(err) throw new Error(err);
-      if(!user) 
+     db.collection('user').findOne(query, function(err, user){
+      if(err) {throw new Error(err);}
+      else if(!user){ 
         console.log('Not found');
-      else 
+    }
+      else{ 
         console.log('Found!');
     	res.redirect('/');
+    	}
   })
 });
 
