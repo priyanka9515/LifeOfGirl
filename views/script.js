@@ -1,12 +1,9 @@
-document.onLoad()
-
-console.log(hi);
-
-
+$(document).ready(function(){
+console.log("hi");
 
     var name,password;
     // $("#submit").click(function(){
-        name=$("#name").val();
+        name= $("#name").val();
         password=$("#password").val();
         console.log("$$$$$$$$$$$$$", name, password)
         $.post("/login", {name: name, password: password} ,function(data){
@@ -14,4 +11,4 @@ console.log(hi);
         });
         console.log("@@@@@@@@@@@@@@@@@");
         localStorage.setItem('user',name);
-    });
+}
