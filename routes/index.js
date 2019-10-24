@@ -1,10 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
-
-
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -13,6 +9,8 @@ router.get('/', function(req, res, next) {
 router.get('/comments', function(req, res, next) {
   res.render('comments', { title: 'Express' });
 });
+
+
 
 router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'SignUp' });
@@ -71,7 +69,19 @@ router.post('/addpost', function(req, res) {
 
 });
 
+router.get('/postlist', function(req, res) {
+    var db = req.db;
+   var userCollection = db.collection('user');
+    userCollection.find({},{},function(e,docs){
+        res.render('posts', {
+    	"xyz" : docs
+        });
+    });
+});
 
+router.get('/posts', function(req, res, next) {
+  res.render('posts', { title: 'Posts' });
+});
 
 router.post('/login', function(req,res){
 console.log("fhfdghd")
