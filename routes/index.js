@@ -39,7 +39,7 @@ router.post('/addpost', function(req, res) {
     // Set our internal DB variable
     var db = req.db;
     // Set our collection
-   var userCollection = db.collection('user');
+   var userCollection = db.collection('post');
     // Get our form values. These rely on the "name" attributes
     var title = req.body.title;
     var desc = req.body.desc;
@@ -49,8 +49,8 @@ router.post('/addpost', function(req, res) {
 
     var time = currentTime.getTime();
     	
-    	id 	 = window.localStorage.getItem('user');
-  
+
+  	    var user = req.body.user;
 
     // Submit to the DB
     userCollection.insert({
@@ -58,7 +58,7 @@ router.post('/addpost', function(req, res) {
         "desc" :desc,
         "link"	:link,
         "time"	:time,
-        "id"	:id}, function (err, doc) {
+        "id":user}, function (err, doc) {
         if (err) {
             // If it failed, return error
             res.send("There was a problem adding the information to the database.");
@@ -74,11 +74,12 @@ router.post('/addpost', function(req, res) {
 
 
 router.post('/login', function(req,res){
-
+console.log("fhfdghd")
  var db = req.db;
     // Set our collection
    var userCollection = db.collection('user');
     // Get our form values. These rely on the "name" attributes
+    console.log("BODY", req.body)
     var id = req.body.name;
     var password = req.body.password;
     var query = {"id": id, "password": password}
@@ -88,7 +89,12 @@ router.post('/login', function(req,res){
         console.log('Not found');
     }
       else{ 
+
+      	sses=req.session;
+      	sses.user=req.body.name;
+
         console.log('Found!');
+    	res.end('done');
     	res.redirect('/');
     	}
   })

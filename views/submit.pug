@@ -6,10 +6,16 @@ form( id='formAddPost' method='POST' action='/addpost')
     div.form-group
       label(for='name') description:
       input#id.form-control(type='text', placeholder='description' name='desc')
-      
+
+    div.form-group
+      label(for='name') 
+      input#user.form-control(type='text', placeholder='user' name='user')
 
     div.form-group
       label(for='name') link:
       input#id.form-control(type='text', placeholder='link' name='link')      
       
       button.btn.btn-primary(type='submit') Submit
+
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+      script!= " (function() {var x=localStorage.getItem('user'); console.log(x); document.getElementbyId=x })();"
