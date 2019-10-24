@@ -18,4 +18,4 @@ form( id='formAddPost' method='POST' action='/addpost')
       button.btn.btn-primary(type='submit') Submit
 
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-      script!= " (function() {var x=localStorage.getItem('user'); console.log(x); document.getElementbyId=x })();"
+      script!= " (function() {var x=localStorage.getItem('user'); console.log(x); document.getElementbyId('user').value=x })();"

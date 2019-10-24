@@ -6,17 +6,5 @@ form( id='formSignIn')
       label(for='pw') Password:
       input#password.form-control(type='password', name='password')
       button.btn.btn-primary(type='submit', id='submit') Sign In
-
-script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-script.
-    var name,password;
-    $("#submit").click(function(){
-        name=$("#name").val();
-        password=$("#password").val();
-        console.log("$$$$$$$$$$$$$", name, password)
-        $.post("/login", {name: name, password: password} ,function(data){
-            console.log("AJAx");
-        });
-        console.log("@@@@@@@@@@@@@@@@@");
-        localStorage.setItem('user',name);
-    });
+ 
+    script(src='script.js', type= 'text/javascript')
