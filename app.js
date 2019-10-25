@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
-
+var bodyParser =require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
 var db = mongoose.connection;
@@ -43,6 +43,11 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 
 // catch 404 and forward to error handler

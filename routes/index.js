@@ -95,9 +95,6 @@ MongoClient.connect(url, function(err, db) {
 
     
 }); 
-
-
-
 });
 
 router.get('/posts', function(req, res, next) {
