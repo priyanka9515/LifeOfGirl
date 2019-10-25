@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var MongoClient = require('mongodb').MongoClient;
+var url = 'mongodb://localhost/EmployeeDB';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -71,12 +73,31 @@ router.post('/addpost', function(req, res) {
 
 router.get('/postlist', function(req, res) {
     var db = req.db;
-   var userCollection = db.collection('user');
-    userCollection.find({},{},function(e,docs){
-        res.render('posts', {
-    	"xyz" : docs
+    var cursor = db.collection('post').find();
+    var data;
+    var postCollection = db.collection('post');
+
+MongoClient.connect(url, function(err, db) {
+    cursor.each(function(err, doc) {
+      
+         console.log(doc);
+      //    res.render('posts', {
+      // "xyz" : doc
+        });
+
+
+    postCollection.find({},{},function(e,docs){
+      console.log("///")
+        res.render('posts',{
+          "posts" : cursor
         });
     });
+
+    
+}); 
+
+
+
 });
 
 router.get('/posts', function(req, res, next) {
