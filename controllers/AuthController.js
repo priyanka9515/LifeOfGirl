@@ -59,7 +59,7 @@ console.log("////////////////////////",req.password);
     }
     console.log("!@!@!@!@@@@@@@@@@@@@@@",user);
     console.log("lklklklkl", req.body.id, req.body.password);
-    res.redirect('/login');
+    res.redirect('http://localhost:3001/Signin');
   });
 
       });
@@ -80,12 +80,14 @@ userController.login = function(req, res) {
 userController.doLogin = function(req, res) {
   passport.authenticate('local', function(err, user, info) {
     if (err) { console.log("KLKLKL",err); }
-    if (!user) { return res.redirect('/'); }
+    if (!user) {
+      console.log('djfsdjfgjsdjfsjdkf');
+      return res.redirect('http://localhost:3001/Signup'); }
 
     // req / res held in closure
     req.logIn(user, function(err) {
       if (err) { return 0; }
-      return res.send(user);
+      return res.redirect('http://localhost:3001/');
     });
 
   })(req, res);
