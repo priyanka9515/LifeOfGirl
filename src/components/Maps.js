@@ -23,9 +23,10 @@ class SimpleMap extends Component {
         // >
         //   <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
         // </GoogleMapReact> */}
-          <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-    function initialize() {
+          <script src="http://www.google.com/jsapi"></script>
+    
+    initialize = () => {
+      
         var loc = {};
         var geocoder = new google.maps.Geocoder();
         if(google.loader.ClientLocation) {
@@ -43,7 +44,7 @@ class SimpleMap extends Component {
 
     google.load("maps", "3.x", {other_params: "sensor=false", callback:initialize});
 
-    </script>
+    
       </div>
     );
   }
