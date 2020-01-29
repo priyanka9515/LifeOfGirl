@@ -6,7 +6,7 @@ var logger = require('morgan');
 var session = require('express-session')
 var bodyParser =require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://heroku_login:80F2rNVHTZFMuY8v@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 var db = mongoose.connection;
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
