@@ -2,6 +2,7 @@ import React from "react";
 import { Form, FormGroup, Button, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 
+
 class Users extends React.Component {
   render() {
     return (
@@ -20,27 +21,30 @@ class Users extends React.Component {
           </div>
           <FormGroup bsSize="large" style={{ marginTop: 10 }}>
             <Label>Name</Label>
-            <Input type="Name" placeholder="FullName" />
+            <Input type="Name" placeholder="FullName" required/>
           </FormGroup>
           <FormGroup bsSize="large">
             <Label>Email</Label>
-            <Input type="email" placeholder="you@gmail.com" />
+            <Input type="email" placeholder="you@gmail.com" required/>
           </FormGroup>
           <FormGroup bsSize="large">
             <Label>Mobile number</Label>
 
-            <Input type="mobilenumber" placeholder="mobilenumber" />
+            <Input type="mobilenumber" placeholder="mobilenumber" required/>
           </FormGroup>
           <FormGroup>
             <Label>password</Label>
-            <Input type="password" placeholder="password" />
+            <Input type="password" placeholder="password" required/>
           </FormGroup>
-          <Button className="btn-lg btn-dark btn-block">Login</Button>
+         
+          <Button className="btn-lg btn-dark btn-block">
+            Login</Button>
+  
         </Form>
         <div style={{ marginTop: 20 }}>
           if you have an account ?
           <Link to="Signin/">
-            <a href="a"> signIn</a>
+               signIn
           </Link>
         </div>
       </div>

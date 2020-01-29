@@ -27,18 +27,19 @@ class Contact extends React.Component {
             <Label>password</Label>
             <Input type="password" placeholder="password" />
           </FormGroup>
-
+          <Link to = "/mapc">
           <Button
             className="btn-lg btn-dark btn-block"
             style={{ backgroundColor: "black", color: "white" }}
           >
 Login
           </Button>
+          </Link>
         </Form>
         <div style={{ marginTop: 20 }}>
           if don't have an account ?
           <Link to="/Signup">
-            <Link> signUp</Link>
+                 signUp
           </Link>
         </div>
       </div>

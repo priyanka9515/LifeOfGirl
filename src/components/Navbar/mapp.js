@@ -49,11 +49,11 @@ recenterMap() {
     if (this.props.centerAroundCurrentLocation) {
       if (navigator && navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(pos => {
-          const coords = pos.coords;
-          this.setState({
-            currentLocation: {
-              lat: coords.latitude,
-              lng: coords.longitude
+const coords = pos.coords;
+this.setState({
+currentLocation: {
+lat: coords.latitude,
+lng: coords.longitude
             }
           });
 

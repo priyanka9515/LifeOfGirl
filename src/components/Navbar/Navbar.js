@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import App from "./App";
 import { Button } from "reactstrap";
+
 import "./Navbar.css";
+import Search from "./Search"
+
 
 class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
+        <Search />
         <div className="nav-right">
           <Link
             to="/signup"
