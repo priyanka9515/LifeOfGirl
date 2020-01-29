@@ -2,10 +2,10 @@ script(type='text/javascript' src="http://code.jquery.com/jquery-latest.js")
 script( type= 'text/javascript',src='/javascripts/script.js')
 
 
-form( id='formSignIn')
+form( id='formSignIn' method='POST' action='/login')
     div.form-group
       label(for='name') Id:
-      input#name.form-control(type='text', placeholder='id' name='name')
+      input#name.form-control(type='text', placeholder='id' name='id')
     div.form-group
       label(for='pw') Password:
       input#password.form-control(type='password', name='password')

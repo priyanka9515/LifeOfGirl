@@ -1,7 +1,9 @@
-form( id='formAddUser' method='POST' action='/adduser')
+form( id='formAddUser' method='POST' action='/register')
     div.form-group
+      label(for='id') Id:
+      input#id.form-control(type='text', placeholder='username' name='username')
       label(for='name') Id:
-      input#id.form-control(type='text', placeholder='id' name='name')
+      input#id.form-control(type='text', placeholder='name' name='name')
     div.form-group
       label(for='pw') Password:
       input#password.form-control(type='password' name='password')
