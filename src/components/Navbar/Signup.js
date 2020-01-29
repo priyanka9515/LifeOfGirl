@@ -39,7 +39,7 @@ class Users extends React.Component {
         </Form>
         <div style={{ marginTop: 20 }}>
           if you have an account ?
-          <Link to="/Signin">
+          <Link to="Signin/">
             <a href="a"> signIn</a>
           </Link>
         </div>

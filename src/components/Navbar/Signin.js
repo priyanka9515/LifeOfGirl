@@ -32,13 +32,13 @@ class Contact extends React.Component {
             className="btn-lg btn-dark btn-block"
             style={{ backgroundColor: "black", color: "white" }}
           >
-            Login
+Login
           </Button>
         </Form>
         <div style={{ marginTop: 20 }}>
           if don't have an account ?
           <Link to="/Signup">
-            <a href="a"> signUp</a>
+            <Link> signUp</Link>
           </Link>
         </div>
       </div>

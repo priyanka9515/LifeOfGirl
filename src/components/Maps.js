@@ -25,9 +25,9 @@ class SimpleMap extends Component {
         // </GoogleMapReact> */}
           <script src="http://www.google.com/jsapi"></script>
     
-    initialize = () => {
+    initialize () {
       
-        var loc = {};
+        const loc = {};
         var geocoder = new google.maps.Geocoder();
         if(google.loader.ClientLocation) {
             loc.lat = google.loader.ClientLocation.latitude;

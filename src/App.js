@@ -11,11 +11,13 @@ function App() {
   return (
     <Router>
       {/* <Navbar /> */}
+      <Route  path="/" component={MapContainer} />
+
       <Route path="/" component={Navbar} />
-      <Route path="/" component={MapContainer} />
-      <Route path="/Signin" component={Signin} />
+      <Route path="/Signin/" component={Signin} />
       <Route path="/Signup" component={Signup} />
       {/* <Maps /> */}
+
     </Router>
   );
 }

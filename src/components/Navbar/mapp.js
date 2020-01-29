@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
 const mapStyles = {
   map: {
     position: 'absolute',
@@ -55,6 +56,7 @@ recenterMap() {
               lng: coords.longitude
             }
           });
+
         });
       }
     }
@@ -82,11 +84,15 @@ recenterMap() {
           zoom: zoom
         }
       );
+      console.log(center)
+      console.log(mapConfig)
+
 
       // maps.Map() is constructor that instantiates the map
       this.map = new maps.Map(node, mapConfig);
     }
   }
+
   renderChildren() {
     const { children } = this.props;
 
@@ -107,21 +113,22 @@ recenterMap() {
    return (
      <div>
        <div style={style} ref="map">
-         Loading map...
-       </div>
-       {this.renderChildren()}
-     </div>
+Loading map...
+</div>
+{this.renderChildren()}
+</div>
    );
  }
-
 }
+
+
 export default CurrentLocation;
 
 CurrentLocation.defaultProps = {
 zoom: 14,
 initialCenter: {
-lat: -1.2884,
-lng: 36.8233
+lat: [],
+lng: []
 },
 centerAroundCurrentLocation: false,
 visible: true
