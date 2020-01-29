@@ -6,8 +6,8 @@ class Search extends Component {
       <div>
         <input
           className="search"
-          placeholder="search here"
-          style={{ border: "1px solid black", width: "700px", height: "30px",marginRight:"100px" }}
+          placeholder="Look out for your peers here!"
+          style={{ border: "1px solid black", width: "600px", height: "30px",marginLeft:"400px",marginTop:"3px" }}
         />
         {/* <Icon style = {{type:'search',marginleft:'-20px'}} />     */}
       </div>

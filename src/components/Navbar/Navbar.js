@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 
 import "./Navbar.css";
-import Search from "./Search"
+import Search from "./Search";
+// import Hamburger from "./Hamburger";
 
 
 class Navbar extends Component {
   render() {
     return (
-      <div className="navbar">
+      <div className="navbar" style={{backgroundColor:"yellow"}}>
+        {/* <Hamburger/> */}
         <Search />
         <div className="nav-right">
           <Link
@@ -20,7 +22,7 @@ class Navbar extends Component {
               padding: "5px"
             }}
           >
-            <Button style={{ backgroundColor: "grey" }}>SignUp</Button>
+            <Button style={{ backgroundColor: "blue",marginTop:"-40px" }}>SignUp</Button>
           </Link>
           <Link
             to="/signin"
@@ -29,8 +31,10 @@ class Navbar extends Component {
               padding: "5px"
             }}
           >
-            <Button style={{ backgroundColor: "grey" }}>SignIn</Button>
+            <Button style={{ backgroundColor: "blue" ,marginTop:"-40px"}}>SignIn</Button>
           </Link>
+          
+
         </div>
       </div>
     );

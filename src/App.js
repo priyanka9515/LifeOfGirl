@@ -12,7 +12,7 @@ function App() {
   return (
     <Router>
       {/* <Navbar /> */}
-      <Route  exact path="/mapc" component={MapContainer} />
+      <Route  exact path="/" component={MapContainer} />
       
       <Route path="/" component={Navbar} />
       <Route path="/Signin" component={Signin} />

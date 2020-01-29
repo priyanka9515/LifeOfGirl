@@ -2,6 +2,8 @@ import React from "react";
 import { Form, FormGroup, Button, Label, Input } from "reactstrap";
 import { Link } from "react-router-dom";
 
+// const bodyParser = require('body-parser');
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 class Users extends React.Component {
   render() {
@@ -11,30 +13,26 @@ class Users extends React.Component {
         style={{
           height: "100px",
           width: "300px",
-          marginLeft: "500px",
+          marginLeft: "50px",
           marginTop: "30px"
         }}
       >
-        <Form className="signin">
+        <Form className="signin" method='post' action='http://localhost:3000/register'>
           <div style={{ fontWeight: "bold", fontSize: 32, marginLeft: 50 }}>
             SignUp Form
           </div>
           <FormGroup bsSize="large" style={{ marginTop: 10 }}>
             <Label>Name</Label>
-            <Input type="Name" placeholder="FullName" required/>
+            <Input name='username' type="Name" placeholder="FullName" required/>
           </FormGroup>
           <FormGroup bsSize="large">
             <Label>Email</Label>
-            <Input type="email" placeholder="you@gmail.com" required/>
+            <Input name='name' type="username" placeholder="you@gmail.com"/>
           </FormGroup>
-          <FormGroup bsSize="large">
-            <Label>Mobile number</Label>
-
-            <Input type="mobilenumber" placeholder="mobilenumber" required/>
-          </FormGroup>
+          
           <FormGroup>
             <Label>password</Label>
-            <Input type="password" placeholder="password" required/>
+            <Input name='password' type="password" placeholder="password" required/>
           </FormGroup>
          
           <Button className="btn-lg btn-dark btn-block">
