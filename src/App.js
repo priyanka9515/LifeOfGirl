@@ -2,26 +2,21 @@ import React from "react";
 // import logo from "./logo.svg";
 import "./App.css";
 import Maps from "./components/Maps";
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Signin from "./components/Navbar/Signin";
+import Signup from "./components/Navbar/Signup";
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <Maps />
-    </div>
+    <Router>
+      {/* <Navbar /> */}
+      <Route path="/" component={Navbar} />
+      <Route path="/" component={Maps} />
+      <Route path="/Signin" component={Signin} />
+      <Route path="/Signup" component={Signup} />
+      {/* <Maps /> */}
+    </Router>
   );
 }
 
